@@ -6,22 +6,30 @@ angular
     ServicioRecetas.$inject = ['$http'];
 
     function ServicioRecetas($http) {
-       var recetas = [
-            {
-                nombre: "craear un controller"
-            },
-            { 
-                nombre: "crear un service"
-            },
-            {
-                nombre: "crear un factory"
-            }
-        ];
+
+
+       // var recetas = [
+       //      {
+       //          nombre: "craear un controller"
+       //      },
+       //      { 
+       //          nombre: "crear un service"
+       //      },
+       //      {
+       //          nombre: "crear un factory"
+       //      }
+       //  ];
         var obtenerRecetas = function () {
-            return recetas;
+            return $http.get("http://127.0.0.1:8000/api/recetas");
         }
+
+        var guardarReceta = function (receta) {
+          return $http.post("http://127.0.0.1:8000/api/recetas", receta);
+        }
+
         return {
-            obtenerRecetas : obtenerRecetas
+            obtenerRecetas : obtenerRecetas,
+            guardarReceta : guardarReceta
         }
-    });
+    }
 })();
