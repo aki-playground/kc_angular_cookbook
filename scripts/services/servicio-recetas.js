@@ -1,7 +1,12 @@
+(function() {
 angular
     .module("cookbook")
-    .service("ServicioRecetas", function () {
-        var recetas = recetas = [
+    .service("ServicioRecetas", ServicioRecetas)
+
+    ServicioRecetas.$inject = ['$http'];
+
+    function ServicioRecetas($http) {
+       var recetas = [
             {
                 nombre: "craear un controller"
             },
@@ -18,4 +23,5 @@ angular
         return {
             obtenerRecetas : obtenerRecetas
         }
-    })
+    });
+})();
