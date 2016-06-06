@@ -1,3 +1,15 @@
- <ul>
-    <li ng-repeat="receta in $ctrl.recetas">{{receta.nombre}}</li>
-</ul>
+<div class="row">
+    <div class="twelve columns">
+
+        <table class="u-full-width">
+            <thead>
+                <th>Nombre</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="receta in $ctrl.recetas">
+                    <td>{{receta.nombre}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

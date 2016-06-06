@@ -16,6 +16,7 @@
     "node-sparrest": "0.0.9"
   },
   "dependencies": {
-    "@angular/router": "^0.2.0"
+    "@angular/router": "^0.2.0",
+    "skeleton-css": "^2.0.4"
   }
 }

@@ -1,0 +1,23 @@
+.barra-navegacion ul {
+    border-bottom: 1px solid #999;
+    line-height: 0;
+
+}
+
+.barra-navegacion li {
+    display: inline-block;
+    line-height: 0;
+}
+
+
+.barra-navegacion a {
+    text-decoration: none;
+    padding: 8px 20px 0 20px;
+}
+.barra-navegacion a:hover {
+    border-top: 3px solid #999;
+}
+
+.barra-navegacion a.seleccionada {
+    border-top: 3px solid #999;
+}
