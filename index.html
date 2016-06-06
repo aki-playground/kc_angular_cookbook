@@ -6,6 +6,7 @@
     <script src="node_modules/angular/angular.js"></script>
     <!-- Documento de Configuración del módulo -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/components/mis-recetas.js"></script>
     <script src="scripts/controllers/lista-recetas.js"></script>
     <script src="scripts/services/servicio-recetas.js"></script>
     <script src="scripts/directives/formulario-alta.js"></script>
@@ -18,11 +19,7 @@
         
     
         <formulario-alta al-hacer-click="guardarReceta(text)"></formulario-alta>
-
-        <ul>
-            <li ng-repeat="receta in recetas">{{receta.nombre}}</li>
-        </ul>
-
+        <mis-recetas></mis-recetas>
     </section>
 </body>
 </html>

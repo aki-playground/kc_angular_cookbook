@@ -7,11 +7,11 @@ angular
 
     function ListaRecetas($scope, ServicioRecetas) {
         
-        ServicioRecetas
-            .obtenerRecetas()
-            .then(function (response) {
-                $scope.recetas = response.data;
-            });
+        // ServicioRecetas
+        //     .obtenerRecetas()
+        //     .then(function (response) {
+        //         $scope.recetas = response.data;
+        //     });
 
         $scope.guardarReceta = function (nombreReceta) {
             debugger;
