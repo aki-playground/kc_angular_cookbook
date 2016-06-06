@@ -12,7 +12,7 @@
             // template : "",
 
             //templateUrl: lo mismo que template pero un html que podemos poner en un fichero externo
-            templateUrl : 'scripts/views/formulario-alta.html',
+            templateUrl : 'views/formulario-alta.html',
 
             // scope: definimos la interfaz de comunicación entre la directiva y el scope padre
             scope : {

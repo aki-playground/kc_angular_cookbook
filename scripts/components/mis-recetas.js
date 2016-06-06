@@ -10,6 +10,7 @@
     
     function misRecetas(ServicioRecetas){
         var self = this;
+        
         ServicioRecetas
             .obtenerRecetas()
             .then(function (response) {

@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="/"> <!-- Indicamos la ruta base para SPA con componentRouter -->
     <meta charset="UTF-8">
     <title>Angular CookBook</title>
     <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/@angular/router/angular1/angular_1_router.js"></script>
     <!-- Documento de Configuración del módulo -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/components/app.js"></script>
     <script src="scripts/components/mis-recetas.js"></script>
+    <script src="scripts/components/nueva-receta.js"></script>
     <script src="scripts/controllers/lista-recetas.js"></script>
     <script src="scripts/services/servicio-recetas.js"></script>
     <script src="scripts/directives/formulario-alta.js"></script>
 </head>
 <body ng-app="cookbook">
-    <header>
-        <h1>Libro de Recetas de AngularJS</h1>
-    </header>
-    <section ng-controller="ListaRecetas">
-        
-    
-        <formulario-alta al-hacer-click="guardarReceta(text)"></formulario-alta>
-        <mis-recetas></mis-recetas>
-    </section>
+    <!-- Componente Raiz -->
+    <app></app>
 </body>
 </html>
