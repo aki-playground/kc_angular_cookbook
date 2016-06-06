@@ -13,8 +13,9 @@ angular
                 $scope.recetas = response.data;
             });
 
-        $scope.guardarReceta = function () {
-            var receta = { nombre : $scope.nombreReceta }
+        $scope.guardarReceta = function (nombreReceta) {
+            debugger;
+            var receta = { nombre : nombreReceta }
 
             ServicioRecetas
                 .guardarReceta(receta)
