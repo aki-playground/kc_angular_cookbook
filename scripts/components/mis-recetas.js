@@ -9,13 +9,16 @@
     misRecetas.$inject = ['ServicioRecetas']
     
     function misRecetas(ServicioRecetas){
-        var self = this;
+        var $ctrl = this;
+
+        $ctrl.$onInit = function () {
+            ServicioRecetas
+                .obtenerRecetas()
+                .then(function (response) {
+                    $ctrl.recetas = response.data;
+                });
+        }
         
-        ServicioRecetas
-            .obtenerRecetas()
-            .then(function (response) {
-                self.recetas = response.data;
-            });
     }
 
     

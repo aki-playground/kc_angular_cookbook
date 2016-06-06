@@ -2,20 +2,25 @@
     angular
         .module('cookbook')
         .component('nuevaReceta', {
+            bindings : {
+                $router: '<' //para posteriormente poder acceder a $ctrl.$router
+            },
             templateUrl: 'views/nueva-receta.html',
             controller: nuevaReceta
         })
     nuevaReceta.$inject = ['ServicioRecetas'];
     function nuevaReceta (ServicioRecetas) {
-        var ctrl = this;
-        ctrl.guardarReceta = function (nombreReceta) {
+        var $ctrl = this;
+        $ctrl.guardarReceta = function (nombreReceta) {
             var receta = { nombre : nombreReceta }
 
             ServicioRecetas
                 .guardarReceta(receta)
                 .then(function (response) {
-                    // ctrl.recetas.push(response.data)
-                    // ctrl.nombreReceta = "";
+
+                    // $router tiene la info sobre la ruta navegada
+                    // Es necesario indicar en bingings la interfaz de comunicación
+                    $ctrl.$router.navigate(['MisRecetas']);
                 })
         }
     }
