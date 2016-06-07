@@ -11,9 +11,7 @@
     nuevaReceta.$inject = ['ServicioRecetas'];
     function nuevaReceta (ServicioRecetas) {
         var $ctrl = this;
-        $ctrl.guardarReceta = function (nombreReceta) {
-            var receta = { nombre : nombreReceta }
-
+        $ctrl.guardarReceta = function (receta) {
             ServicioRecetas
                 .guardarReceta(receta)
                 .then(function (response) {

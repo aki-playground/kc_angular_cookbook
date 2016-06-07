@@ -7,10 +7,13 @@
             type="text" 
             ng-model="receta.nombre" 
             placeholder="Descripción de la receta AngularJS" >
-    <button ng-click="agregarReceta()"
-            ng-disabled="frmNuevaReceta.$invalid">Aceptar</button>
     <ingredientes 
             ingredientes="receta.ingredientes"
             on-nuevo-ingrediente="agregarIngrediente(ingrediente)"
             on-ingrediente-eliminado="eliminarIngrediente(indice)"></ingredientes>
+    <button ng-click="agregarReceta()"
+            ng-disabled="!recetaValida()"
+            class="u-full-width button-primary">
+            Aceptar
+    </button>
 </div>

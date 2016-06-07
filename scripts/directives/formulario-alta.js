@@ -29,16 +29,23 @@
                 // Gestiona botón Aceptar
                 scope.agregarReceta = function () {
                     scope.alHacerClick({
-                        texto : scope.receta.nombre
+                        receta : scope.receta
                     })
                 }
                 scope.agregarIngrediente = function (ingrediente) {
+                    // El objeto ingrediente lo recibimos desde el componente
+                    //  ingrediente.
                     scope.receta.ingredientes.push(ingrediente);
                 }
 
                 scope.eliminarIngrediente = function (indice) {
-                    console.log("2")
+                    // El índice lo recibimos desde el componente 
+                    //  ingredientes con $index del ng-repeat
                     scope.receta.ingredientes.splice(indice, 1)
+                }
+
+                scope.recetaValida = function () {
+                    return (scope.receta.nombre && scope.receta.ingredientes.length > 0)
                 }
             }
         }
