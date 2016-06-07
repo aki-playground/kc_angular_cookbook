@@ -14,31 +14,39 @@
 
     function ingredientes () {
         var $ctrl = this;
-        $ctrl.nuevoIngrediente;
         
         // onInit: evento inicial del ciclo-de-vida de un componente (inicializaciones aquí)
         $ctrl.$onInit = function () {
-            $ctrl.nuevoIngrediente = {
-                nombre: '',
-                cantidad: 1
-            }
-
-            $ctrl.ingredientes = [];
+            $ctrl.ingrediente = {
+                nombre : '',
+                cantidad : 1
+            };
         }
 
         $ctrl.onKeyUp = function ($event) {
             var key = $event.which || $event.keyCode;
-            console.log(key)
             // Hay navegadores que soporan 'which' y otros 'keyCode'
+            if (key === 13 // 13=>Tecla Intro
+                && $ctrl.ingrediente.nombre 
+                && !existeIngrediente($ctrl.ingrediente.nombre)) { 
 
-            if (key === 13 && $ctrl.nuevoIngrediente) { // 13=>Tecla Intro
-                $ctrl.ingredientes.push($ctrl.nuevoIngrediente);
-                $ctrl.nuevoIngrediente = {
+                $ctrl.onNuevoIngrediente({ingrediente: $ctrl.ingrediente});
+                $ctrl.ingrediente = {
                     nombre: '',
                     cantidad: 1
                 };
             }
 
+        }
+
+        $ctrl.eliminar = function (indice) {
+            $ctrl.onIngredienteEliminado({indice: indice})
+        }
+
+        function existeIngrediente (nombreIngrediente) {
+            return $ctrl.ingredientes.filter(function (ingrediente) {
+                return ingrediente.nombre.toUpperCase() === nombreIngrediente.toUpperCase();
+            }).length > 0
         }
 
     }

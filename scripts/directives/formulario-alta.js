@@ -22,13 +22,26 @@
             // link: establecemos la lógica de la directiva y podemos manipular DOM
             link: function (scope) {
 
+                scope.receta = {
+                    nombre: "",
+                    ingredientes : []
+                }
                 // Gestiona botón Aceptar
-                scope.notificarTexto = function () {
+                scope.agregarReceta = function () {
                     scope.alHacerClick({
-                        texto : scope.texto
+                        texto : scope.receta.nombre
                     })
+                }
+                scope.agregarIngrediente = function (ingrediente) {
+                    scope.receta.ingredientes.push(ingrediente);
+                }
+
+                scope.eliminarIngrediente = function (indice) {
+                    console.log("2")
+                    scope.receta.ingredientes.splice(indice, 1)
                 }
             }
         }
     }
+
 })();

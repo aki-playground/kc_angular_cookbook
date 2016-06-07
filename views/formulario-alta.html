@@ -1,9 +1,19 @@
 <div>
     <form name="frmNuevaReceta">
     <!-- Formulario de Altas -->
-        <input type="text" ng-model="texto" required>
-        <button ng-click="notificarTexto()"
+        <label for="recetaNombre">
+            Nombre de la receta
+        </label>
+        <input id="recetaNombre" 
+                type="text" 
+                ng-model="receta.nombre" 
+                placeholder="Descripción de la receta AngularJS" 
+                required>
+        <button ng-click="agregarReceta()"
                 ng-disabled="frmNuevaReceta.$invalid">Aceptar</button>
-        <ingredientes></ingredientes>
     </form>
+    <ingredientes 
+            ingredientes="receta.ingredientes"
+            on-nuevo-ingrediente="agregarIngrediente(ingrediente)"
+            on-ingrediente-eliminado="eliminarIngrediente(indice)"></ingredientes>
 </div>

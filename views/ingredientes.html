@@ -1,14 +1,19 @@
+<label for="ingredienteNombre">
+    Nombre del ingrediente
+</label>
 <input 
+    id="igredienteNombre"
     type="text" 
     class="u-full-width" 
-    ng-model="$ctrl.nuevoIngrediente.nombre"
-    ng-keyup="$ctrl.onKeyUp($event)">
-<table class="u-full-width">
+    ng-model="$ctrl.ingrediente.nombre"
+    ng-keyup="$ctrl.onKeyUp($event)"
+    placeholder="Descripción del ingrediente">
+<table ng-show="$ctrl.ingredientes.length > 0" class="u-full-width">
     <thead>
         <tr>
             <th>Ingredientes</th>
             <th>Cantidad (gr)</th>
-
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -16,6 +21,9 @@
             <td>{{ ingrediente.nombre }}</td>
             <td>
                 <input type="number" ng-model="ingrediente.cantidad" min="1" max="9999">
+            </td>
+            <td>
+                <button ng-click="$ctrl.eliminar($index)">Eliminar</button>
             </td>
         </tr>
 
