@@ -1,17 +1,14 @@
 <div>
-    <form name="frmNuevaReceta">
-    <!-- Formulario de Altas -->
-        <label for="recetaNombre">
-            Nombre de la receta
-        </label>
-        <input id="recetaNombre" 
-                type="text" 
-                ng-model="receta.nombre" 
-                placeholder="Descripción de la receta AngularJS" 
-                required>
-        <button ng-click="agregarReceta()"
-                ng-disabled="frmNuevaReceta.$invalid">Aceptar</button>
-    </form>
+    <!-- Altas -->
+    <label for="recetaNombre">
+        Nombre de la receta
+    </label>
+    <input id="recetaNombre" 
+            type="text" 
+            ng-model="receta.nombre" 
+            placeholder="Descripción de la receta AngularJS" >
+    <button ng-click="agregarReceta()"
+            ng-disabled="frmNuevaReceta.$invalid">Aceptar</button>
     <ingredientes 
             ingredientes="receta.ingredientes"
             on-nuevo-ingrediente="agregarIngrediente(ingrediente)"
