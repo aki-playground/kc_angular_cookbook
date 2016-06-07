@@ -30,6 +30,8 @@
                     $ctrl.cargarRecetas();
                 })
         }
+
+        $ctrl.obtenerRutaImagen = ServicioRecetas.obtenerRutaImagenAbsoluta;
         
     }
 

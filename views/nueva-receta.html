@@ -1,6 +1,12 @@
-
-    <div class="row">
-        <div class="twelve columns">
+<div class="row">
+    <div class="twelve columns">
+        <div class="five columns">
+            <image-picker
+                image-selected="$ctrl.seleccionarImagen(imageFile)"
+                image-deselected="$ctrl.deseleccionarImagen()"></image-picker>
+        </div>
+        <div class="seven columns">
             <formulario-alta al-hacer-click="$ctrl.guardarReceta(receta)"></formulario-alta>
         </div>
     </div>
+</div>

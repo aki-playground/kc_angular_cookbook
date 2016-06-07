@@ -11,15 +11,23 @@
     nuevaReceta.$inject = ['ServicioRecetas'];
     function nuevaReceta (ServicioRecetas) {
         var $ctrl = this;
+        var imagenReceta;
         $ctrl.guardarReceta = function (receta) {
             ServicioRecetas
-                .guardarReceta(receta)
+                .guardarReceta(receta, imagenReceta)
                 .then(function (response) {
 
                     // $router tiene la info sobre la ruta navegada
                     // Es necesario indicar en bingings la interfaz de comunicación
                     $ctrl.$router.navigate(['MisRecetas']);
                 })
+        }
+        $ctrl.seleccionarImagen = function (imagen) {
+            imagenReceta = imagen;
+        }
+
+        $ctrl.deseleccionarImagen = function () {
+            imagenReceta = null;
         }
     }
 })();

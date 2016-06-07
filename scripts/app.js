@@ -1,5 +1,8 @@
 angular
-    .module("cookbook", ['ngComponentRouter']);
+    .module("cookbook", [
+        'ngComponentRouter', // ComponentRouter (deprecated, esperando alternativa (160607)) 
+        'dahr.ng-image-picker' // Image Picker de Vermicida
+    ]);
 
 
 // Config proveedor $locationProvider
