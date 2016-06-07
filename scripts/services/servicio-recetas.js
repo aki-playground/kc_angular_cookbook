@@ -27,9 +27,14 @@ angular
           return $http.post("http://127.0.0.1:8000/api/recetas", receta);
         }
 
+        var eliminarReceta = function (id) {
+          return $http.delete("http://127.0.0.1:8000/api/recetas/" + id);
+        }
+
         return {
             obtenerRecetas : obtenerRecetas,
-            guardarReceta : guardarReceta
+            guardarReceta : guardarReceta,
+            eliminarReceta : eliminarReceta
         }
     }
 })();

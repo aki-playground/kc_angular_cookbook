@@ -1,13 +1,20 @@
 <div class="row">
     <div class="twelve columns">
-
+        
+        <input type="text" class="u-full-width" ng-model="filtroReceta" placeholder="Buscar Receta">
         <table class="u-full-width">
             <thead>
-                <th>Nombre</th>
+                <th colspan="2">Nombre</th>
             </thead>
             <tbody>
-                <tr ng-repeat="receta in $ctrl.recetas">
-                    <td>{{receta.nombre}}</td>
+                <tr ng-repeat="receta in $ctrl.recetas | filter : {nombre:filtroReceta} | orderBy: 'nombre'">
+                    <td>
+                        {{ receta.nombre }} <br>
+                        <small>{{ receta.ingredientes | ResumenIngredientes}}</small>
+                    </td>
+                    <td>
+                        <button ng-click="$ctrl.eliminar(receta.id)">Eliminar</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
